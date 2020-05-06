@@ -40,6 +40,8 @@ namespace WebAPI.Controllers
             current.Login = admin.Login;
             current.Passwd = admin.Passwd;
 
+            this.context.SaveChanges();
+
         }
 
         // DELETE: api/Admin/5
