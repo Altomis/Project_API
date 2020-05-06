@@ -12,5 +12,6 @@ namespace WebAPI.Models
         public string MacAddress { get; set; }
         public string IpAddress { get; set; }
         public string Created { get; set; }
+        public bool Active { get; set; }
     }
 }

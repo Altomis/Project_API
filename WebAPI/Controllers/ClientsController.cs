@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient.Memcached;
+using Org.BouncyCastle.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace WebAPI.Controllers
             current.MacAddress = clients.MacAddress;
             current.IpAddress = clients.IpAddress;
             current.Created = clients.Created;
+            current.Active = clients.Active;
 
             this.context.SaveChanges();
 
@@ -50,7 +52,7 @@ namespace WebAPI.Controllers
         {
             Clients clients = this.context.Clients.Find(id);
 
-            this.context.People.Remove(clients);
+            this.context.Clients.Remove(clients);
             this.context.SaveChanges();
         }
     }
