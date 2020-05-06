@@ -13,6 +13,12 @@ namespace WebAPI.Models
     {
         public DbSet<Person> People { get; set; }
         public DbSet<Clients> Clients { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+        public DbSet<FinishedJobs> FinishedJobs { get; set; }
+        public DbSet<FTP_Server> FTP_Server { get; set; }
+        public DbSet<Groups> Groups { get; set; }
+        public DbSet<Jobs> Jobs { get; set; }
+        public DbSet<Path> Path { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
