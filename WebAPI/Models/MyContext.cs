@@ -16,7 +16,7 @@ namespace WebAPI.Models
         public DbSet<FinishedJobs> FinishedJobs { get; set; }
         public DbSet<FTP_Server> FTP_Server { get; set; }
         public DbSet<Groups> Groups { get; set; }
-        public DbSet<ClientGroups> ClientGroups {get; set; }
+        public DbSet<ClientsGroups> ClientsGroups {get; set; }
         public DbSet<Jobs> Jobs { get; set; }
         public DbSet<Path> Path { get; set; }
 

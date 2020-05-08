@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebAPI.Models
 {
-    public class ClientGroups
+    public class ClientsGroups
     {
         public int Id { get; set; }
         public string Name { get; set; }

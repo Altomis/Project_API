@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\ClientsGroupsController.cs" />
     <Compile Include="Controllers\FinishedJobsController.cs" />
     <Compile Include="Controllers\FTP_ServerController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
@@ -193,7 +194,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\ClientGroups.cs" />
+    <Compile Include="Models\ClientsGroups.cs" />
     <Compile Include="Models\Clients.cs" />
     <Compile Include="Models\FinishedJobs.cs" />
     <Compile Include="Models\FTP_Server.cs" />
