@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -12,15 +14,15 @@ namespace WebAPI.Controllers
     {
         private MyContext context = new MyContext();
         // GET: api/FTP_Server
-        public IEnumerable<FTP_Server> Get()
+        public async Task<IEnumerable<FTP_Server>> Get()
         {
-            return this.context.FTP_Server;
+            return await context.FTP_Server.ToListAsync();
         }
 
         // GET: api/FTP_Server/5
-        public FTP_Server Get(int id)
+        public async Task<FTP_Server> Get(int id)
         {
-            return this.context.FTP_Server.Find(id);
+            return await context.FTP_Server.FindAsync(id);
         }
 
         // POST: api/FTP_Server

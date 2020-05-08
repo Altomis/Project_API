@@ -187,3 +187,4 @@ C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.
 C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache

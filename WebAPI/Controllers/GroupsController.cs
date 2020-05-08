@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -13,15 +15,15 @@ namespace WebAPI.Controllers
     {
         private MyContext context = new MyContext();
         // GET: api/Groups
-        public IEnumerable<Groups> Get()
+        public async Task<IEnumerable<Groups>> Get()
         {
-            return this.context.Groups;
+            return await context.Groups.ToListAsync();
         }
 
         // GET: api/Groups/5
-        public Groups Get(int id)
+        public async Task<Groups> Get(int id)
         {
-            return this.context.Groups.Find(id);
+            return await context.Groups.FindAsync(id);
         }
 
         // POST: api/Groups

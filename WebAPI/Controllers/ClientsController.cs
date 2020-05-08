@@ -2,9 +2,11 @@
 using Org.BouncyCastle.Security;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -14,15 +16,15 @@ namespace WebAPI.Controllers
     {
         private MyContext context = new MyContext();
         // GET: api/Clients
-        public IEnumerable<Clients> Get()
+        public async Task<IEnumerable<Clients>> Get()
         {
-            return this.context.Clients;
+            return await context.Clients.ToListAsync();
         }
 
         // GET: api/Clients/5
-        public Clients Get(int id)
+        public async Task<Clients> Get(int id)
         {
-            return this.context.Clients.Find(id);
+            return await context.Clients.FindAsync(id);
         }
 
         // Put: api/Clients/5

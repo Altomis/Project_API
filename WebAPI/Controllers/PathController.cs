@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -12,15 +14,15 @@ namespace WebAPI.Controllers
     {
         private MyContext context = new MyContext();
         // GET: api/Path
-        public IEnumerable<Path> Get()
+        public async Task<IEnumerable<Path>> Get()
         {
-            return this.context.Path;
+            return await context.Path.ToListAsync();
         }
 
         // GET: api/Path/5
-        public Path Get(int id)
+        public async Task<Path> Get(int id)
         {
-            return this.context.Path.Find(id);
+            return await context.Path.FindAsync(id);
         }
 
         // POST: api/Path

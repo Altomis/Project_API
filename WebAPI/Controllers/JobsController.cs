@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -12,15 +14,23 @@ namespace WebAPI.Controllers
     {
         private MyContext context = new MyContext();
         // GET: api/Jobs
-        public IEnumerable<Jobs> Get()
+        public async Task<IEnumerable<Jobs>> Get()
         {
-            return this.context.Jobs;
+            return await context.Jobs.ToListAsync();
         }
 
         // GET: api/Jobs/5
-        public Jobs Get(int id)
+        public async Task<Jobs> Get(int id)
         {
-            return this.context.Jobs.Find(id);
+            return await context.Jobs.FindAsync(id);
+        }
+
+        //getiing jobs for client
+        [Route("api/Jobs/GetMyJobs/{UserId:int}")]
+        [HttpGet]
+        public async Task<Clients> GetMyJobs(int UserId)
+        {
+            return await this.context.Clients.FindAsync(11);//Bude vracet list jobu co ma urcity client podle kde to taky bude vracet list cest
         }
 
         // POST: api/Jobs
