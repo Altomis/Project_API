@@ -38,8 +38,8 @@ namespace WebAPI.Controllers
         {
             Groups current = this.context.Groups.Find(id);
 
-            current.Name = groups.Name;
             current.IdClient = groups.IdClient;
+            current.IdClientsGroups = groups.IdClientsGroups;
             current.IdJob = groups.IdJob;
 
             this.context.SaveChanges();
