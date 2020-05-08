@@ -8,7 +8,7 @@ namespace WebAPI.Models
     public class Groups
     {
         public int Id { get; set; }
-        public string IdClientsGroups { get; set; }
+        public int IdClientsGroups { get; set; }
         public int IdClient { get; set; }
         public int IdJob { get; set; }
     }
