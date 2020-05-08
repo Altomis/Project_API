@@ -187,11 +187,8 @@
     <Compile Include="Controllers\FinishedJobsController.cs" />
     <Compile Include="Controllers\FTP_ServerController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\PathController.cs" />
-    <Compile Include="Controllers\PeopleController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,7 +200,6 @@
     <Compile Include="Models\Jobs.cs" />
     <Compile Include="Models\MyContext.cs" />
     <Compile Include="Models\Path.cs" />
-    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

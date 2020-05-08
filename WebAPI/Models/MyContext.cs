@@ -11,7 +11,6 @@ namespace WebAPI.Models
     [DbConfigurationType(typeof(MySql.Data.EntityFramework.MySqlEFConfiguration))]
     public class MyContext : DbContext
     {
-        public DbSet<Person> People { get; set; }
         public DbSet<Clients> Clients { get; set; }
         public DbSet<Admin> Admin { get; set; }
         public DbSet<FinishedJobs> FinishedJobs { get; set; }
