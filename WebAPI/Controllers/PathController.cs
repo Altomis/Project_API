@@ -37,14 +37,23 @@ namespace WebAPI.Controllers
         {
             Path current = this.context.Path.Find(id);
 
+            current.IdJob = path.IdJob;
             current.Source = path.Source;
             current.IdFTP = path.IdFTP;
-            current.Destination = path.Destination;
+            current.Which = path.Which;
+            current.Login = path.Login;
+            current.Password = path.Password;
         }
 
         // DELETE: api/Path/5
         public void Delete(int id)
         {
+            Path path = this.context.Path.Find(id);
+
+            this.context.Path.Remove(path);
+            this.context.SaveChanges();
+
+
         }
     }
 }

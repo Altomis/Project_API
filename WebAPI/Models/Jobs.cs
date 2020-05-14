@@ -9,7 +9,6 @@ namespace WebAPI.Models
     {
         public int Id { get; set; }
         public string BackupType { get; set; }
-        public int IdPath { get; set; }
         public int MaxFullBackup { get; set; }
         public int MaxSecBackup { get; set; }
         public string CronTime { get; set; }

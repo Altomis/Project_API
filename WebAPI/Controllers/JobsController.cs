@@ -46,7 +46,6 @@ namespace WebAPI.Controllers
             Jobs current = this.context.Jobs.Find(id);
 
             current.BackupType = jobs.BackupType;
-            current.IdPath = jobs.IdPath;
             current.MaxFullBackup = jobs.MaxFullBackup;
             current.MaxSecBackup = jobs.MaxSecBackup;
             current.CronTime = jobs.CronTime;
