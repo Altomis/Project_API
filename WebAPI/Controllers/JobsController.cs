@@ -50,7 +50,7 @@ namespace WebAPI.Controllers
                 cjobs[i].Id = jobs[i].Id;
                 cjobs[i].MaxFullBackup = jobs[i].MaxFullBackup;
                 cjobs[i].MaxSecBackup = jobs[i].MaxSecBackup;
-                cjobs[i].CronTime = jobs[i].CronTime;
+                cjobs[i].CronTime = CroneConvert.ConvertCrone(jobs[i].CronTime);
                 cjobs[i].Ends = jobs[i].Ends;
                 cjobs[i].BackupType = jobs[i].BackupType;
 
@@ -73,7 +73,7 @@ namespace WebAPI.Controllers
             cjobs.Id = jobs.Id;
             cjobs.MaxFullBackup = jobs.MaxFullBackup;
             cjobs.MaxSecBackup = jobs.MaxSecBackup;
-            cjobs.CronTime = jobs.CronTime;
+            cjobs.CronTime = new DateTime[10];
             cjobs.Ends = jobs.Ends;
             cjobs.BackupType = jobs.BackupType;
             cjobs.Destination = new List<string>();
