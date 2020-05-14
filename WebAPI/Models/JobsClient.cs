@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebAPI.Models
 {
-    public class Jobs
+    public class JobsClient
     {
         public int Id { get; set; }
         public string BackupType { get; set; }
@@ -13,6 +13,7 @@ namespace WebAPI.Models
         public int MaxSecBackup { get; set; }
         public string CronTime { get; set; }
         public string Ends { get; set; }
+        public List<string> Source { get; set; }
+        public List<string> Destination { get; set; }
     }
-
 }

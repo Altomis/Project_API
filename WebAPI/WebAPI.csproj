@@ -200,6 +200,7 @@
     <Compile Include="Models\FTP_Server.cs" />
     <Compile Include="Models\Groups.cs" />
     <Compile Include="Models\Jobs.cs" />
+    <Compile Include="Models\JobsClient.cs" />
     <Compile Include="Models\MyContext.cs" />
     <Compile Include="Models\Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
