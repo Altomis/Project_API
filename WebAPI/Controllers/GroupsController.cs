@@ -25,6 +25,23 @@ namespace WebAPI.Controllers
         {
             return await context.Groups.FindAsync(id);
         }
+        //getiing clients by groups id
+        [Route("api/Groups/GetClients/{GroupsId:int}")]
+        [HttpGet]
+        public async Task<Clients[]> GetClients(int UserId)
+        {
+            Clients[] clients = this.context.Clients.SqlQuery(@"select 
+            c.Id,
+            c.Pc_Name,
+            c.MacAddress,
+            c.IpAddress,
+            c.Created,
+            c.Active FROM Clients c 
+                inner join Groups g on g.IdKlient = c.Id
+                inner join ClientsGroups cg on g.IdClientsGroups = cg.Id
+            where c.Od = " + UserId).ToArray();
+            return clients;
+        }
 
         // POST: api/Groups
         public void Post([FromBody]Groups groups)

@@ -189,3 +189,4 @@ C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.
 C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
 C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\bin\NCrontab.dll
 C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\bin\NCrontab.pdb
+C:\Users\Polo\Desktop\framework\zdrojovy-projekt\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache
