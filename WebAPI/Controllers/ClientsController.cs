@@ -57,8 +57,8 @@ namespace WebAPI.Controllers
         public void Post([FromBody]Clients clients)
         {
             this.context.Clients.Add(clients);
-            Groups groups = new Groups() { IdClient = clients.Id, IdClientsGroups = 1 };
-            this.context.Groups.Add(groups);
+            //Groups groups = new Groups() { IdClient = clients.Id, IdClientsGroups = 1 };
+            //this.context.Groups.Add(groups);
             this.context.SaveChanges();
         }
 
