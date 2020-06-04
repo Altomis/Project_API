@@ -29,25 +29,27 @@ namespace WebAPI.Controllers
         //getiing jobs for client
         [Route("api/Jobs/GetMyJobs/{UserId:int}")]
         [HttpGet]
-        public async Task<JobsClient[]> GetMyJobs(int UserId)
+        public async Task<JobsClientModel[]> GetMyJobs(int UserId)
         {
             Jobs[] jobs = this.context.Jobs.SqlQuery(@"select 
               j.Id,
               j.BackupType,
               j.MaxFullBackup,
               j.MaxSecBackup,
+              j.ToZip,
               j.CronTime,
-              j.Ends from jobs j
-              inner join project.groups g on j.Id = g.IdJob
+              j.Ends from Jobs j
+              inner join 3b2_kalpakcisismael_db1.Groups g on j.Id = g.IdJob
               where g.IdClient = " + UserId).ToArray();
 
-            JobsClient[] cjobs = new JobsClient[jobs.Length];
+            JobsClientModel[] cjobs = new JobsClientModel[jobs.Length];
             for (int i = 0; i < jobs.Length; i++)
             {
                 cjobs[i] = FillList(jobs[i]);
                 Path[] paths = this.context.Path.SqlQuery(@"select
-                * from path p where IdJob = " + jobs[i].Id).ToArray();
+                * from Path p where IdJob = " + jobs[i].Id).ToArray();
                 cjobs[i].Id = jobs[i].Id;
+                cjobs[i].ToZip = jobs[i].ToZip;
                 cjobs[i].MaxFullBackup = jobs[i].MaxFullBackup;
                 cjobs[i].MaxSecBackup = jobs[i].MaxSecBackup;
                 cjobs[i].CronTime = CroneConvert.ConvertCrone(jobs[i].CronTime);
@@ -64,19 +66,15 @@ namespace WebAPI.Controllers
             }
 
             //zapise ze klient byl online
-            ClientsReporting cr = new ClientsReporting();
-            cr.ClientId = UserId;
+            ClientsReporting cr = this.context.ClientsReporting.Find(UserId);
             cr.LastSeen = DateTime.UtcNow.ToString();
-            this.context.ClientsReporting.Add(cr);
             this.context.SaveChanges();
-
-
             return cjobs; //Bude vracet list jobu co ma urcity client podle kde to taky bude vracet list cest
         }
 
-        private JobsClient FillList(Jobs jobs)
+        private JobsClientModel FillList(Jobs jobs)
         {
-            JobsClient cjobs = new JobsClient();
+            JobsClientModel cjobs = new JobsClientModel();
             cjobs.Id = jobs.Id;
             cjobs.MaxFullBackup = jobs.MaxFullBackup;
             cjobs.MaxSecBackup = jobs.MaxSecBackup;
@@ -101,6 +99,7 @@ namespace WebAPI.Controllers
             Jobs current = this.context.Jobs.Find(id);
 
             current.BackupType = jobs.BackupType;
+            current.ToZip = jobs.ToZip;
             current.MaxFullBackup = jobs.MaxFullBackup;
             current.MaxSecBackup = jobs.MaxSecBackup;
             current.CronTime = jobs.CronTime;

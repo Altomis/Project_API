@@ -50,15 +50,22 @@ namespace WebAPI.Controllers
             current.Active = clients.Active;
 
             this.context.SaveChanges();
-
         }
 
         // Post: api/Clients
         public void Post([FromBody]Clients clients)
         {
+            string temp = clients.MacAddress;
             this.context.Clients.Add(clients);
-            //Groups groups = new Groups() { IdClient = clients.Id, IdClientsGroups = 1 };
-            //this.context.Groups.Add(groups);
+            this.context.SaveChanges();
+            var tepp = new List<Clients>(context.Clients.ToList());
+            this.context.Groups.Add(new Groups() { IdClient =tepp.Last().Id, IdClientsGroups = 1 ,IdJob = 1});
+            this.context.SaveChanges();
+            ClientsReporting cr = new ClientsReporting();
+            cr.Id = tepp.Last().Id;
+            //cr.ClientId = tepp.Last().Id;
+            cr.LastSeen = DateTime.UtcNow.ToString();
+            this.context.ClientsReporting.Add(cr);
             this.context.SaveChanges();
         }
 

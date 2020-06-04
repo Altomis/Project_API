@@ -39,8 +39,9 @@ namespace WebAPI.Controllers
 
             current.IdGroups = finishedJobs.IdGroups;
             current.BackupType = finishedJobs.BackupType;
-            current.IdParentBackup = finishedJobs.IdParentBackup;
             current.Time = finishedJobs.Time;
+            current.IsError = finishedJobs.IsError;
+            current.ErrorMsg = finishedJobs.ErrorMsg;
 
             this.context.SaveChanges();
 

@@ -39,6 +39,7 @@ namespace WebAPI.Controllers
 
             current.Firstname = admin.Firstname;
             current.Surname = admin.Surname;
+            current.Email = admin.Email;
             current.Login = admin.Login;
             current.Passwd = admin.Passwd;
 

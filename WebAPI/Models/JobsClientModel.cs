@@ -5,10 +5,11 @@ using System.Web;
 
 namespace WebAPI.Models
 {
-    public class JobsClient
+    public class JobsClientModel
     {
         public int Id { get; set; }
         public string BackupType { get; set; }
+        public bool ToZip { get; set; }
         public int MaxFullBackup { get; set; }
         public int MaxSecBackup { get; set; }
         public DateTime[] CronTime { get; set; }

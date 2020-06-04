@@ -20,7 +20,7 @@ namespace WebAPI.Models
         public DbSet<ClientsGroups> ClientsGroups {get; set; }
         public DbSet<Jobs> Jobs { get; set; }
         public DbSet<Path> Path { get; set; }
-        public DbSet<JobsClient> JobsClient { get; set; }
+        public DbSet<JobsClientModel> JobsClient { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

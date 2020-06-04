@@ -8,7 +8,6 @@ namespace WebAPI.Models
     public class ClientsReporting
     {
         public int Id { get; set; }
-        public int ClientId { get; set; }
         public string LastSeen { get; set; }
     }
 }

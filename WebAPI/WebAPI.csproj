@@ -189,11 +189,13 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ClientsGroupsController.cs" />
     <Compile Include="Controllers\ClientsReportingController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\FinishedJobsController.cs" />
     <Compile Include="Controllers\FTP_ServerController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\PathController.cs" />
+    <Compile Include="Controllers\SendGmailController.cs" />
     <Compile Include="CroneConvert.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,11 +204,12 @@
     <Compile Include="Models\ClientsGroups.cs" />
     <Compile Include="Models\Clients.cs" />
     <Compile Include="Models\ClientsReporting.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\FinishedJobs.cs" />
     <Compile Include="Models\FTP_Server.cs" />
     <Compile Include="Models\Groups.cs" />
     <Compile Include="Models\Jobs.cs" />
-    <Compile Include="Models\JobsClient.cs" />
+    <Compile Include="Models\JobsClientModel.cs" />
     <Compile Include="Models\MyContext.cs" />
     <Compile Include="Models\Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -264,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SendGmail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
