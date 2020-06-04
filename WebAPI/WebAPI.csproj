@@ -188,6 +188,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ClientsGroupsController.cs" />
+    <Compile Include="Controllers\ClientsReportingController.cs" />
     <Compile Include="Controllers\FinishedJobsController.cs" />
     <Compile Include="Controllers\FTP_ServerController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\ClientsGroups.cs" />
     <Compile Include="Models\Clients.cs" />
+    <Compile Include="Models\ClientsReporting.cs" />
     <Compile Include="Models\FinishedJobs.cs" />
     <Compile Include="Models\FTP_Server.cs" />
     <Compile Include="Models\Groups.cs" />

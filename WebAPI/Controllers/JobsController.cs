@@ -63,6 +63,13 @@ namespace WebAPI.Controllers
                 }
             }
 
+            //zapise ze klient byl online
+            ClientsReporting cr = new ClientsReporting();
+            cr.ClientId = UserId;
+            cr.LastSeen = DateTime.UtcNow.ToString();
+            this.context.ClientsReporting.Add(cr);
+            this.context.SaveChanges();
+
 
             return cjobs; //Bude vracet list jobu co ma urcity client podle kde to taky bude vracet list cest
         }

@@ -12,6 +12,7 @@ namespace WebAPI.Models
     public class MyContext : DbContext
     {
         public DbSet<Clients> Clients { get; set; }
+        public DbSet<ClientsReporting> ClientsReporting { get; set; }
         public DbSet<Admin> Admin { get; set; }
         public DbSet<FinishedJobs> FinishedJobs { get; set; }
         public DbSet<FTP_Server> FTP_Server { get; set; }
